@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Небольшой путеводитель по семи горным регионам: от Хибин и Урала до Алтая и Тибета."
+    />
+    <title>Горные массивы — семь горных миров</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <header class="site-header container">
+      <a class="brand" href="#top" aria-label="Горные массивы — наверх">
+        <svg class="brand__icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M3 29 14 13l7 9 5-7 11 14H3Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" />
+          <path d="M3 34h34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+        </svg>
+        <span>Горные массивы</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="#ranges">О горах</a>
+        <button class="theme-button" type="button" id="theme-toggle" aria-label="Включить тёмную тему">
+          <span class="theme-button__icon" aria-hidden="true">☾</span>
+          <span class="theme-button__text">Тёмная тема</span>
+        </button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero container" id="top" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <p class="eyebrow">Небольшое путешествие по горам</p>
+          <h1 id="hero-title">Семь <em>горных миров</em></h1>
+          <p class="hero__description">
+            От заполярных Хибин до высокогорного Тибета — у каждого места свой характер.
+            Выберите карточку, посмотрите фотографию и откройте короткие факты.
+          </p>
+          <div class="hero__actions">
+            <button class="primary-button" type="button" id="random-mountain">
+              Случайная гора <span aria-hidden="true">↗</span>
+            </button>
+            <a class="text-link" href="#ranges">Смотреть все <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="selection-status" id="selection-status" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="hero__art" aria-hidden="true">
+          <span class="hero__sun"></span>
+          <span class="hero__ridge hero__ridge--back"></span>
+          <span class="hero__ridge hero__ridge--middle"></span>
+          <span class="hero__ridge hero__ridge--front"></span>
+          <span class="hero__art-label">01 / 07 · исследуй природу</span>
+        </div>
+      </section>
+
+      <section class="ranges container" id="ranges" aria-labelledby="ranges-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Горная коллекция</p>
+            <h2 id="ranges-title">Познакомьтесь с горами</h2>
+          </div>
+          <p>Нажмите «Подробнее» на карточке, чтобы узнать ещё два факта.</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="mountain-card" id="sayany" data-name="Саяны">
+            <div class="card__media card__media--sayany">
+              <img src="media/Саяны.jpeg" alt="Горы Саяны за осенним лесом" loading="lazy" />
+              <span class="card__number">01 / 07</span>
+            </div>
+            <div class="card__content">
+              <p class="card__region">Юг Сибири</p>
+              <h3>Саяны</h3>
+              <p class="card__summary">Горная страна с таёжными склонами и высокими вершинами.</p>
+              <button class="card__button" type="button" aria-expanded="false" aria-controls="details-sayany">
+                <span>Подробнее</span><span class="card__button-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="card__details" id="details-sayany" hidden>
+                <ul>
+                  <li>Саянская горная система включает Западный и Восточный Саян.</li>
+                  <li>Мунку-Сардык — вершина Восточного Саяна высотой 3491 м.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="mountain-card" id="caucasus" data-name="Кавказ">
+            <div class="card__media card__media--caucasus">
+              <img src="media/Кавказ.jpeg" alt="Заснеженный Эльбрус на закате" loading="lazy" />
+              <span class="card__number">02 / 07</span>
+            </div>
+            <div class="card__content">
+              <p class="card__region">Между Чёрным и Каспийским морями</p>
+              <h3>Кавказ</h3>
+              <p class="card__summary">Снежные вершины и глубокие ущелья одного из самых известных горных регионов.</p>
+              <button class="card__button" type="button" aria-expanded="false" aria-controls="details-caucasus">
+                <span>Подробнее</span><span class="card__button-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="card__details" id="details-caucasus" hidden>
+                <ul>
+                  <li>Эльбрус достигает 5642 м и считается высшей вершиной России.</li>
+                  <li>В районе Безенги находятся ещё шесть российских пятитысячников.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="mountain-card" id="khamar-daban" data-name="Хамар-Дабан">
+            <div class="card__media card__media--khamar">
+              <img src="media/Хамар-Дабан.jpeg" alt="Каменистая река в лесу Хамар-Дабана" loading="lazy" />
+              <span class="card__number">03 / 07</span>
+            </div>
+            <div class="card__content">
+              <p class="card__region">Южный берег Байкала</p>
+              <h3>Хамар-Дабан</h3>
+              <p class="card__summary">Хребет, где горные склоны соседствуют с байкальскими пейзажами.</p>
+              <button class="card__button" type="button" aria-expanded="false" aria-controls="details-khamar">
+                <span>Подробнее</span><span class="card__button-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="card__details" id="details-khamar" hidden>
+                <ul>
+                  <li>Хамар-Дабан тянется вдоль южного побережья Байкала.</li>
+                  <li>Его центральная часть находится под охраной Байкальского заповедника.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="mountain-card" id="altai" data-name="Алтай">
+            <div class="card__media card__media--altai">
+              <img src="media/Алтай.jpeg" alt="Горные вершины и озёра Алтая" loading="lazy" />
+              <span class="card__number">04 / 07</span>
+            </div>
+            <div class="card__content">
+              <p class="card__region">Центральная Азия</p>
+              <h3>Алтай</h3>
+              <p class="card__summary">Горные долины, ледники и озёра на стыке нескольких стран.</p>
+              <button class="card__button" type="button" aria-expanded="false" aria-controls="details-altai">
+                <span>Подробнее</span><span class="card__button-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="card__details" id="details-altai" hidden>
+                <ul>
+                  <li>Белуха высотой 4506 м — высшая точка Алтая.</li>
+                  <li>Природный объект ЮНЕСКО «Золотые горы Алтая» включает территории у Белухи, Телецкого озера и плато Укок.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="mountain-card" id="ural" data-name="Урал">
+            <div class="card__media card__media--ural">
+              <img src="media/Урал.jpeg" alt="Каменистые вершины Урала со снежниками" loading="lazy" />
+              <span class="card__number">05 / 07</span>
+            </div>
+            <div class="card__content">
+              <p class="card__region">Граница Европы и Азии</p>
+              <h3>Урал</h3>
+              <p class="card__summary">Длинная цепь гор, протянувшаяся через разные природные зоны.</p>
+              <button class="card__button" type="button" aria-expanded="false" aria-controls="details-ural">
+                <span>Подробнее</span><span class="card__button-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="card__details" id="details-ural" hidden>
+                <ul>
+                  <li>Уральские горы тянутся с севера на юг примерно на 2500 км.</li>
+                  <li>Урал служит условной природной границей между Европой и Азией.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="mountain-card" id="khibiny" data-name="Хибины">
+            <div class="card__media card__media--khibiny">
+              <img src="media/Хибины.jpeg" alt="Северное сияние над заснеженными Хибинами" loading="lazy" />
+              <span class="card__number">06 / 07</span>
+            </div>
+            <div class="card__content">
+              <p class="card__region">Кольский полуостров</p>
+              <h3>Хибины</h3>
+              <p class="card__summary">Северные горы с широкими платообразными вершинами и суровыми зимними пейзажами.</p>
+              <button class="card__button" type="button" aria-expanded="false" aria-controls="details-khibiny">
+                <span>Подробнее</span><span class="card__button-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="card__details" id="details-khibiny" hidden>
+                <ul>
+                  <li>Хибинский массив возник около 380 млн лет назад.</li>
+                  <li>Его высшая гора Юдычвумчорр достигает примерно 1200 м.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="mountain-card mountain-card--featured" id="tibet" data-name="Тибетское нагорье">
+            <div class="card__media card__media--tibet">
+              <img src="media/Тибет.jpeg" alt="Человек с яком у озера на фоне гор Тибета" loading="lazy" />
+              <span class="card__number">07 / 07</span>
+            </div>
+            <div class="card__content">
+              <p class="card__region">Высокогорье Азии</p>
+              <h3>Тибетское нагорье</h3>
+              <p class="card__summary">Огромный высокогорный край с заснеженными вершинами и прозрачными озёрами.</p>
+              <button class="card__button" type="button" aria-expanded="false" aria-controls="details-tibet">
+                <span>Подробнее</span><span class="card__button-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="card__details" id="details-tibet" hidden>
+                <ul>
+                  <li>Средняя высота Тибетского нагорья составляет около 4500 м.</li>
+                  <li>Здесь берут начало крупные азиатские реки, в том числе Инд, Брахмапутра и Янцзы.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <div>
+        <p class="footer-title">Семь горных миров</p>
+        <p>Откройте факты, сохраните любимое место в памяти и однажды увидьте его своими глазами.</p>
+      </div>
+      <div class="footer-sources">
+        <p>Источники фактов</p>
+        <a href="https://ergaki-park.ru/about/istoriko-kulturnaya-tsennost/" target="_blank" rel="noopener noreferrer">Саяны ↗</a>
+        <a href="https://tunkapark.ru/nature/geo" target="_blank" rel="noopener noreferrer">Мунку-Сардык ↗</a>
+        <a href="https://kavkaz.travel/attractions/108" target="_blank" rel="noopener noreferrer">Кавказ ↗</a>
+        <a href="https://baikalzapovednik.ru/baikalreserve" target="_blank" rel="noopener noreferrer">Хамар-Дабан ↗</a>
+        <a href="https://altai.travel/tourism/places/Beluha_moutain" target="_blank" rel="noopener noreferrer">Алтай ↗</a>
+        <a href="https://whc.unesco.org/en/list/768" target="_blank" rel="noopener noreferrer">ЮНЕСКО ↗</a>
+        <a href="https://science.nasa.gov/earth/earth-observatory/the-ural-mountains-87198/" target="_blank" rel="noopener noreferrer">Урал ↗</a>
+        <a href="https://inep.ksc.ru/documents/putev_ru1.pdf" target="_blank" rel="noopener noreferrer">Хибины ↗</a>
+        <a href="https://www.earthobservatory.nasa.gov/images/147622/lighting-the-edge-of-the-roof" target="_blank" rel="noopener noreferrer">Тибет ↗</a>
+        <a href="https://science.nasa.gov/earth/earth-observatory/tibet-36252/" target="_blank" rel="noopener noreferrer">Реки Тибета ↗</a>
+      </div>
+    </footer>
+  </body>
+</html>
