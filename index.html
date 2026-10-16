@@ -9,7 +9,9 @@
     />
     <title>Горные массивы — семь горных миров</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="extras.css" />
     <script src="script.js" defer></script>
+    <script src="extras.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -58,6 +60,14 @@
           <span class="hero__art-label">01 / 07 · исследуй природу</span>
         </div>
       </section>
+
+      <nav class="extra-nav container" aria-label="Разделы страницы">
+        <a href="#ranges">Карточки</a>
+        <a href="#gallery">Фотогалерея</a>
+        <a href="#dictionary">Словарь</a>
+        <a href="#packing">Рюкзак</a>
+        <a href="#quiz">Викторина</a>
+      </nav>
 
       <section class="ranges container" id="ranges" aria-labelledby="ranges-title">
         <div class="section-heading">
@@ -215,6 +225,87 @@
               </div>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section class="extra-section container" id="gallery" aria-labelledby="gallery-title">
+        <p class="section-kicker">Горы в кадре</p>
+        <h2 id="gallery-title">Маленькое фотопутешествие</h2>
+        <p class="extra-intro">Семь мест — семь разных пейзажей. Листайте фотографии и выбирайте любимый вид.</p>
+        <figure class="gallery">
+          <img id="gallery-image" src="media/Саяны.jpeg" alt="Горы Саяны за осенним лесом" loading="lazy" />
+          <figcaption>
+            <span id="gallery-caption">Саяны</span>
+            <span id="gallery-count">1 / 7</span>
+          </figcaption>
+        </figure>
+        <div class="extra-actions">
+          <button class="extra-button" id="gallery-prev" type="button" aria-label="Предыдущая фотография">← Назад</button>
+          <button class="extra-button" id="gallery-next" type="button" aria-label="Следующая фотография">Дальше →</button>
+          <a class="extra-link" id="gallery-link" href="#sayany">К карточке этого места</a>
+        </div>
+        <p class="extra-status" id="gallery-status" role="status"></p>
+      </section>
+
+      <section class="extra-section container" id="dictionary" aria-labelledby="dictionary-title">
+        <p class="section-kicker">Разберёмся в словах</p>
+        <h2 id="dictionary-title">Короткий горный словарь</h2>
+        <p class="extra-intro">Эти слова встречаются в описаниях гор. Нажмите на термин, чтобы прочитать объяснение.</p>
+        <div class="dictionary-grid">
+          <details class="dictionary-item">
+            <summary>Хребет</summary>
+            <p>Вытянутая цепь гор, у которой вершины идут одна за другой. Пример на сайте — Хамар-Дабан.</p>
+          </details>
+          <details class="dictionary-item">
+            <summary>Нагорье</summary>
+            <p>Обширная возвышенная территория с горными хребтами, плато и долинами. На сайте есть Тибетское нагорье.</p>
+          </details>
+          <details class="dictionary-item">
+            <summary>Вершина</summary>
+            <p>Самая высокая часть отдельной горы. Например, Белуха — высшая вершина Алтая.</p>
+          </details>
+          <details class="dictionary-item">
+            <summary>Перевал</summary>
+            <p>Понижение в горном хребте, через которое можно перейти из одной долины в другую.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="extra-section container" id="packing" aria-labelledby="packing-title">
+        <p class="section-kicker">Собираем рюкзак</p>
+        <h2 id="packing-title">Что уже положили?</h2>
+        <p class="extra-intro">Небольшой список для прогулки по оборудованной тропе. Для конкретного маршрута понадобятся свои дополнения.</p>
+        <div class="packing-panel">
+          <div class="packing-list">
+            <label><input type="checkbox" /> Вода</label>
+            <label><input type="checkbox" /> Перекус</label>
+            <label><input type="checkbox" /> Дождевик</label>
+            <label><input type="checkbox" /> Тёплая кофта</label>
+            <label><input type="checkbox" /> Заряженный телефон</label>
+            <label><input type="checkbox" /> Пакет для своего мусора</label>
+          </div>
+          <p id="packing-status" role="status">Собрано: 0 из 6</p>
+          <progress id="packing-progress" value="0" max="6" aria-label="Сколько вещей собрано"></progress>
+          <p><button class="extra-button" id="packing-reset" type="button">Снять отметки</button></p>
+        </div>
+        <p class="extra-note">Отметки действуют до обновления страницы.</p>
+      </section>
+
+      <section class="extra-section quiz container" id="quiz" aria-labelledby="quiz-title">
+        <p class="section-kicker">Проверьте себя</p>
+        <h2 id="quiz-title">Что запомнилось о горах?</h2>
+        <p class="extra-intro">Три вопроса по карточкам выше. За каждый правильный ответ — один балл.</p>
+        <div class="quiz-panel">
+          <p class="section-kicker" id="quiz-progress">Вопрос 1 из 3</p>
+          <h3 id="quiz-question" tabindex="-1">Какая вершина считается самой высокой в России?</h3>
+          <div class="quiz__answers" role="group" aria-labelledby="quiz-question">
+            <button class="extra-button quiz__answer" type="button">Белуха</button>
+            <button class="extra-button quiz__answer" type="button">Эльбрус</button>
+            <button class="extra-button quiz__answer" type="button">Мунку-Сардык</button>
+          </div>
+          <p class="quiz__result" id="quiz-result" role="status"></p>
+          <button class="extra-button" id="quiz-next" type="button" hidden>Следующий вопрос →</button>
+          <button class="extra-button" id="quiz-reset" type="button" hidden>Пройти ещё раз</button>
         </div>
       </section>
     </main>
